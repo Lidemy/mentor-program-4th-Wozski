@@ -1,15 +1,12 @@
 function printStars(n) {
-	let result = []
+	let result = [];
 	for (let i= 1; i <= n ; i++){
 		if (i === n){
-			result += '*'
+			result += '*';
 		} else {
-		result += '*' + '\n'
-
-		}
-		}
-	console.log(result)
-  
-}
+			result += '*' + '\n'};
+		};
+		console.log(result);
+	}
 
 printStars(5);
