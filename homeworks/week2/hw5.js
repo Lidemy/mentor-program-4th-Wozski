@@ -1,5 +1,8 @@
 function join(arr, concatStr) {
 	var result = [];
+	if (arr === 0){
+		return ''
+	};
 	for ( var i = 0 ; i < arr.length; i++){
 		if (i == arr.length -1 && arr.length !== 1 ) {
 			result += arr[i];
@@ -19,5 +22,5 @@ function repeat(str, times) {
 	return result
 }
 
-console.log(join([1, 2, 3], ''));
+console.log(join([], '!'));
 console.log(repeat('a', 5));

@@ -1,6 +1,6 @@
 function printFactor(n) {
-	var ans = Number(n);
-	var result = [];
+	let ans = Number(n);
+	let result = [];
 	for (let i = 1 ; i <= n; i++) {
 		if ( n % i == 0 ) {
 			result += i + '\n';

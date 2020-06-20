@@ -4,8 +4,9 @@ function printStars(n) {
 		if (i === n){
 			result += '*';
 		} else {
-			result += '*' + '\n'};
+			result += '*' + '\n'
 		};
+	};
 		console.log(result);
 	}
 
