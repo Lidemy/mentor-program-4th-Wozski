@@ -21,10 +21,10 @@ rl.on('close', function () {
 function solve(input) {
   for (let i = 1; i < input.length; i += 1) {
     let arr = Number(input[i]);
-  if (isPrime(arr) === true) {
-    console.log('Prime');
-      } else {
-    console.log('Composite');
+    if (isPrime(arr) === true) {
+      console.log('Prime');
+    } else {
+      console.log('Composite');
     }
   }
 }
