@@ -24,7 +24,7 @@ function solve(input) {
   if (isPrime(arr) === true) {
     console.log('Prime');
       } else {
-    console.log('Composite')
+    console.log('Composite');
     }
   }
 }
