@@ -21,17 +21,22 @@ rl.on('close', function () {
 function solve(input) {
   for (let i = 1; i < input.length; i += 1) {
     let arr = Number(input[i]);
-    console.log(Prime(arr));
+    if (isPrime(arr) === true) {
+      console.log('Prime');
+    } else {
+      console.log('Composite');
+    }
   }
 }
-function Prime(n) {
+
+function isPrime(n) {
   while (n === 1) {
-    return 'Composite';
+    return false;
   }
   for (let i = 2; i <= n; i += 1) {
     if (n % i === 0 && n !== i) {
-      return 'Composite';
+      return false;
     }
   }
-  return 'Prime';
+  return true;
 }

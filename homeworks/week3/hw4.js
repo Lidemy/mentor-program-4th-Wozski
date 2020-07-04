@@ -18,7 +18,11 @@ rl.on('close', function () {
   solve(lines);
 });
 function solve(input) {
-  console.log(reverse(input));
+  if (reverse(input) === true) {
+    console.log('True');
+  } else {
+    console.log('False');
+  }
 }
 
 function reverse(arr) {
@@ -32,7 +36,7 @@ function reverse(arr) {
     result2 += newarr[j];
   }
   if (result === result2) {
-    return 'True';
+    return true;
   }
-  return 'False';
+  return false;
 }
