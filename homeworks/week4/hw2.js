@@ -58,7 +58,6 @@ function deleteBook(id) {
     console.log('刪除成功！');
   });
 }
-
 function createBook(name) {
   request.post({
     url: `${API_ENDPOINT}/books`,
