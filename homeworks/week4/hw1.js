@@ -3,7 +3,7 @@ const request = require('request');
 
 request.get(
   {
-    url: 'https://lidemy-book-store.herokuapp.com/books',
+    url: 'https://lidemy-book-store.herokuapp.com/books?_limit=10',
   },
   function (error, respone, body) {
     if (error) {
@@ -11,7 +11,7 @@ request.get(
       return;
     }
     const data = JSON.parse(body);
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < data.length; i += 1) {
       console.log(`${data[i].id} ${data[i].name}`);
     }
   },
