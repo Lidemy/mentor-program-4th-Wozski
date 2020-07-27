@@ -14,7 +14,7 @@ function SearchCountry() {
       return console.log('抓取失敗', err);
     }
     const data = JSON.parse(body);
-    if (data.status === 404) {
+    if (data.status >= 400 && data.status <= 511) {
       return console.log('找不到國家資訊');
     }
     for (let i = 0; i < data.length; i += 1) {
