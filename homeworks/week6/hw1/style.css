@@ -188,11 +188,13 @@ h2 {
 .box2 {
   margin-left: 16px;
   top: -72px;
+  width: 357px;
 }
 
 .box3 {
   top: -160px;
   margin-left: 16px;
+  width: 315px;
 }
 
 .thrd {
@@ -294,6 +296,13 @@ footer {
    .section__comments {
    	flex-direction: column;
    }
+   
+   .comment {
+     width: 745px;
+   }
+   .box {
+     
+   }
 
    .box2 {
    	 margin-left: 0;
@@ -303,7 +312,26 @@ footer {
    .box3 {
    	 margin-left: 0;
    	 margin-top: 82px;
+
    }
+
+
+}
+
+@media (max-width: 375px) {
+  .comment {
+    width: 350px;
+  }
+
+  .btn-order {
+    position: relative;
+    left: -19px;
+  }
+
+  .btn-query {
+    position: relative;
+    left: -19px;
+  }
 }
 
 
