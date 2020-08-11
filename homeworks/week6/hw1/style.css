@@ -187,14 +187,15 @@ h2 {
 
 .box2 {
   margin-left: 16px;
-  top: -72px;
-  width: 357px;
+  top: -274px;
+  left: 427px;
 }
 
 .box3 {
-  top: -160px;
+  top: -562px;
   margin-left: 16px;
-  width: 315px;
+  left: 870px;
+  
 }
 
 .thrd {
@@ -305,14 +306,19 @@ footer {
    }
 
    .box2 {
-   	 margin-left: 0;
-   	 margin-top: 82px;
+   	display: inline-block;
+    left: 0px;
+    top:0px;
+    margin-left: 0;
+
    }
 
    .box3 {
+    display: inline-block;
    	 margin-left: 0;
-   	 margin-top: 82px;
-
+   	 margin-top: 0px;
+     top: 0px;
+     left: 0px;
    }
 
 
