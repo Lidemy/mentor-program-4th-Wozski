@@ -1,0 +1,95 @@
+body {
+      font-size: 38px;
+      background: white;
+
+    }
+
+    .app {
+      background: #7FFFD4;
+      margin-left: 12%;
+      margin-right: 12%;
+      padding-bottom: 22px;
+    }
+
+    .row {
+      margin-left: 23%;
+    }
+    
+    .result {
+      background: rgba(0, 0, 0, 0.5)
+    }
+
+    h1 {
+      text-align: center;
+
+    }
+
+    .Todo__list {
+      margin-left: 23%;
+      margin-bottom: 26px;
+      width: 55%;
+      color: grey;
+      border: 0;
+      }
+
+    .MakeWish {
+      margin-bottom: 30px;
+      width: 602px;
+      border:0;
+      }
+    
+    .show {
+      display: block;
+    }
+
+    .delete {
+      position: absolute;
+      left: 86%;
+      border-radius: 100%;
+      background: #7FFFD4;
+      font-size: 20px;
+      top: 19px;
+    }
+    .Todo__checked {
+      text-decoration: line-through;
+      color: grey;
+    }
+
+    ul {
+      height: 80px;
+    }
+
+    ul li {
+      position: relative;
+      padding: 12px 8px 12px 2px;
+      list-style-type: none;
+      font-size: 36px;
+      transition: 0.2s;
+      top: -54px;
+      left: 0px;
+      width: 700px;
+    }
+
+    li:hover {
+      background: rgba(0,0,0,0.2);
+    }
+
+    .Tips {
+      font-size: 19px;
+      margin-left: 36%;
+      margin-top: -7px;
+      color: grey;
+    }
+
+    .Todo__text {
+      display: inline-block;
+      margin-left: 15px;
+    }
+
+    .Todo__checkbox {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      position: relative;
+      left: -38px;
+    }
