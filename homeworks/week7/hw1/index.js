@@ -4,7 +4,7 @@
 /* eslint-disable prefer-const */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable  prefer-arrow-callback */
-document.querySelector("form").addEventListener("submit",
+document.querySelector("form").window.addEventListener("submit",
   function (e) {
     e.preventDefault();
     let hasError = false;
