@@ -29,9 +29,8 @@
     */
     $_SESSION["username"] = $username;
     header("Location: index.php");
-  } else {
-    header("Location: login.php?errCode=2");
-  }
+  } 
+  header("Location: login.php?errCode=2");  
     /*產生 token 並儲存
     $token = generateToken();
     $username = $_SESSION["username"];
