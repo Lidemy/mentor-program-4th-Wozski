@@ -1,5 +1,5 @@
 ## 什麼是 Ajax？
-在瀏覽器上發出 Request ，所運用到的技術 Ajax 『Asynchronous JavaScript and XML』，是屬於非同步的一項技術
+在瀏覽器上發出 Request ，所運用到的技術 Ajax 『Asynchronous JavaScript and XML』，**並不能稱做是種「技術」，而是 2005 年時由 Jesse James Garrett 所發明的術語，描述一種使用數個既有技術的「新」方法。**
 因為在傳送資料時會耗費較多的時間，所以在資料傳輸回來時，我們可以先執行其他事情，使用 Ajax 最大的優點就是能在不更新整個頁面的前提下維護資料，這使得 Web 可以更加迅速的反應用戶的動作，避免了那些沒有改變的資訊拖慢了網頁的讀取，導致使用者介面回應比本機應用慢得多。
 
 ## 用 Ajax 與我們用表單送出資料的差別在哪？
@@ -43,6 +43,7 @@ JSONP（JSON with Padding）是資料格式JSON的一種「使用模式」，可
 參考資料：
 1. [輕鬆理解 Ajax 與跨來源請求](https://blog.techbridge.cc/2017/05/20/api-ajax-cors-and-jsonp/)
 2. [維基百科- Ajax](https://zh.wikipedia.org/wiki/AJAX)
+10. [Ajax](https://developer.mozilla.org/zh-TW/docs/Web/Guide/AJAX)
 3. [維基百科- JSONP](http://xn--zh-ur4a.wikipedia.org/wiki/JSONP)
 4. [跨來源資源共享](https://zh.wikipedia.org/wiki/%E8%B7%A8%E4%BE%86%E6%BA%90%E8%B3%87%E6%BA%90%E5%85%B1%E4%BA%AB)
 5. [XMLHttpRequest](https://developer.mozilla.org/zh-TW/docs/Web/API/XMLHttpRequest)
