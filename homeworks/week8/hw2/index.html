@@ -222,9 +222,9 @@
       document.querySelector('h1').innerText = gameName
 	  document.querySelector('.streams').innerHTML = ''
 	  getStreams(gameName, function(streams) {
-	  	for(let stream of streams) {
-          appendStream(stream);
-        }
+		  for(let stream of streams) {
+			  appendStream(stream);
+		  }
 	  });
     }
     function getGames(callback) {
