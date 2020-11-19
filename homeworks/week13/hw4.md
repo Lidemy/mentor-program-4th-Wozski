@@ -26,7 +26,6 @@ inline style > ID > Class > Element > *
 ## P1 你知道 webpack 的目的以及原理
 ## P1 你熟悉如何使用 webpack 進行模組化開發
 ## P1 你知道如何使用 Promise
-
 ## P2 你知道如何使用 fetch
 ## P2 你知道 gulp 的目的以及原理
 ## P2 你知道 CSS Sprites 與 Data URI 的優缺點
