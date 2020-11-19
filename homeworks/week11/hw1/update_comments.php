@@ -14,6 +14,8 @@
   if (!empty($_SESSION["username"])) {
   	$username = $_SESSION["username"];
   	$user = getUserFromSession($username);
+  } else {
+    header("Location: index.php");
   }
   /*
   實作 Session 作法
