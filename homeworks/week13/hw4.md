@@ -31,6 +31,9 @@ inline style > ID > Class > Element > *
 ## P2 你知道 gulp 的目的以及原理
 ## P2 你知道 CSS Sprites 與 Data URI 的優缺點
 ## P2 你知道什麼是 uglify 與 minify
-
 ## P3 你熟悉如何使用 gulp 建構自動化工作流程
 ## P3 你知道 CSS 優化的一些小技巧
+
+參考資料：
+1. [Webpack-WIKI](https://zh.wikipedia.org/wiki/Webpack)
+2. [Webpack教學 (一) ：什麼是Webpack? 能吃嗎？](https://medium.com/i-am-mike/%E4%BB%80%E9%BA%BC%E6%98%AFwebpack-%E4%BD%A0%E9%9C%80%E8%A6%81webpack%E5%97%8E-2d8f9658241d)
