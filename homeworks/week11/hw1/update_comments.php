@@ -37,6 +37,7 @@
   //拿出結果
   $result = $stmt->get_result();
   $row = $result->fetch_assoc();
+  header("Location: index.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
