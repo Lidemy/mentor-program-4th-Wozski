@@ -4,106 +4,79 @@
 /* eslint-disable prefer-const */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-unused-vars */
-
+/* eslint-disable no-use-before-define */
+// <div class="stream-empty"></div>
 const API_URL = 'https://api.twitch.tv/kraken';
-const CLIENT_ID = 'wb6ouv69d2g65j45gudmezzey1b3lm';
+const CLIENT_ID = 's44s145uexjgeu9mqqa1s93oc1bnli';
 const STREAM_TEMPLATE = `<div class="stream">
-    <img src="$preview" />
-    <a href="$url" target="_blank" />
-    <div class="stream__data">
-        <div class="stream__avatar">
-            <img src="$logo">
-        </div>
-        <div class="stream__intro">
-            <div class="stream__title">$status</div>
-            <div class="stream__channel">
-                $name
-            </div>
-        </div>
-    </div>
-  </div>`;
-function getGamesFetch(callback) {
-  fetch(API_URL + '/games/top?limit=5', {
-    method: 'GET',
-    body: JSON.stringify(),
-    headers: new Headers({
+       <img src="$preview" />
+       <div class="stream__data">
+           <div class="stream__avatar">
+               <img src="$logo">
+           </div>
+           <div class="stream__intro">
+               <a herf=$url target="_blank">
+                <div class="stream__title">$title</div>
+                <div class="stream__channel">
+                    $name
+                </div>
+               </a>
+           </div>
+       </div>
+     </div>`;
+
+getGamesFetch().then((data) => {
+  const gameTop = data.top;
+  for (let game of gameTop) {
+    let element = document.createElement('li');
+    element.innerText = game.game.name;
+    document.querySelector('.navbar__nav').appendChild(element);
+  }
+
+  // 顯示第一個遊戲的實況名稱
+  changeGame(gameTop[0].game.name);
+});
+
+document.querySelector('.navbar__nav').addEventListener('click', (e) => {
+  if (e.target.tagName.toLowerCase() === 'li') {
+    const gameName = e.target.innerText;
+    changeGame(gameName);
+  }
+});
+function getStreamsFetch(gameName) {
+  return fetch(API_URL + '/streams?game=' + encodeURIComponent(gameName), {
+    headers: {
+      Accept: 'application/vnd.twitchtv.v5+json',
       'Client-ID': CLIENT_ID,
-      'Accept': 'application/vnd.twitchtv.v5+json',
-    }),
+    },
   })
-    .then((response) => {
-      if (response.status >= 200 && response.status < 400) {
-        return response.json()
-          .then((json) => {
-            const data = json.top;
-            callback(data);
-          });
-      }
-    });
-}
-function getStreamsFetch(gameName, callback) {
-  fetch(API_URL + '/streams?game=' + encodeURIComponent(gameName), {
-    method: 'GET',
-    body: JSON.stringify(),
-    headers: new Headers({
-      'Client-ID': CLIENT_ID,
-      'Accept': 'application/vnd.twitchtv.v5+json',
-    }),
-  })
-    .then((response) => {
-      if (response.status >= 200 && response.status < 400) {
-        return response.json()
-          .then((json) => {
-            const data = json.streams;
-            callback(data);
-          });
-      }
-    });
+    .then(response => response.json());
 }
 function appendStream(stream) {
   let element = document.createElement('div');
   document.querySelector('.streams').appendChild(element);
   element.outerHTML = STREAM_TEMPLATE
     .replace('$preview', stream.preview.large)
-    .replace('$url', stream.channel.url)
     .replace('$logo', stream.channel.logo)
-    .replace('$status', stream.channel.status)
-    .replace('name', stream.channel.name);
+    .replace('$title', stream.channel.status)
+    .replace('$name', stream.channel.name)
+    .replace('$url', stream.channel.url);
 }
 function changeGame(gameName) {
   document.querySelector('h1').innerText = gameName;
   document.querySelector('.streams').innerHTML = '';
-  getStreamsFetch(gameName, (streams) => {
-    for (let stream of streams) {
-      appendStream(stream);
+  getStreamsFetch(gameName).then((data) => {
+    for (data.stream of data.streams) {
+      appendStream(data.stream);
     }
   });
 }
-/*
-XMLHttpRequest() 方式
-function getGames(callback) {
-    request.open('GET', API_URL + '/games/top?limit=5', true);
-    request.setRequestHeader('Client-ID', CLIENT_ID)
-    request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        const games = JSON.parse(this.response).top
-        callback(games);
-      }
-    }
-    request.send();
+function getGamesFetch() {
+  return fetch(API_URL + '/games/top?limit=5', {
+    headers: {
+      Accept: 'application/vnd.twitchtv.v5+json',
+      'Client-ID': CLIENT_ID,
+    },
+  })
+    .then(response => response.json());
 }
-function getStreams(gameName, callback) {
-    const request = new XMLHttpRequest();
-    request.open('GET', API_URL + '/streams?game=' + encodeURIComponent(gameName), true);
-    request.setRequestHeader('Client-ID', CLIENT_ID)
-    request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        const data = JSON.parse(request.response).streams
-        callback(data);
-      }
-    }
-    request.send()
-}
-*/
