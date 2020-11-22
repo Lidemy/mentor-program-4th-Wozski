@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twitch Live Games</title>
+  <meta name="description" content="Week8 作業">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar__site">Twitch Top Games</div>
+    <ul class="navbar__nav">
+    </ul>
+  </header>
+  <div class="bg">
+    <div class="wrapper">
+    <h1>Loading...</h1>
+    <h2>Top 20 popular live streams sorted by current viewers</h2>
+    <section class="streams">
+    </section>
+  </div>
+<script type="text/javascript" src="util.js"></script>
+<script>
+// <div class="stream-empty"></div>
+//const request = new XMLHttpRequest();
+// 最理想的狀況是 資料歸資料 UI 歸 UI
+getGamesFetch(function(games) {
+    for(let game of games) {
+      let element = document.createElement('li');
+      element.innerText = game.game.name;
+      document.querySelector('.navbar__nav').appendChild(element)
+      // 顯示第一個遊戲的實況名稱、抓取第一個遊戲的實況內容
+      changeGame(games[0].game.name);
+    }
+});
+
+// 案 navbar 上的遊戲分類，可以切換不同遊戲。
+document.querySelector('.navbar__nav').addEventListener('click', e => {
+  if (e.target.tagName.toLowerCase() === 'li') {
+    const gameName = e.target.innerText;
+    changeGame(gameName);
+  }
+});
+</script>
+</body>
+</html>
