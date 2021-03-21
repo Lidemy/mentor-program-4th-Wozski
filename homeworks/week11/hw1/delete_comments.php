@@ -20,7 +20,7 @@
   if (isAdmin($user)) {
     $stmt->bind_param('i', $id);
   } else {
-    $stmt->bind_param('sis', $content, $id, $username);    
+    $stmt->bind_param('is', $id, $username);    
   }
   $result = $stmt->execute();
   /*if (!empty($_SESSION["username"])) {
