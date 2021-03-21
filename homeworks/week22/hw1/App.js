@@ -14,7 +14,6 @@ import { getMe } from "./WebAPI";
 const Root = styled.div``;
 function App() {
   const [isLoding, setIsLoding] = useState(true);
-  console.log(isLoding);
   const [user, setUser] = useState(null);
   useEffect(() => {
     // 有 token 才打 api
