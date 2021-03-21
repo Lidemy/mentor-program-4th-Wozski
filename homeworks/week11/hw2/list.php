@@ -65,7 +65,7 @@ $result = $stmt->get_result();
           <?php if ($row['is_deleted'] !== 1) {?>
         <div class="admin-post">
           <div class="admin-post__title">
-          <?php echo $row['title']?>
+          <?php echo escape($row['title'])?>
           </div>
           <div class="admin-post__info">
             <div class="admin-post__created-at">
